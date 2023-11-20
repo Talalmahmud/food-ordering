@@ -5,7 +5,8 @@ import React from "react";
 
 const Header = () => {
   const session = useSession();
-  console.log(session.status);
+  console.log(session);
+  const userName = session?.data?.user?.name?.split(" ")[0];
 
   return (
     <>
@@ -22,7 +23,12 @@ const Header = () => {
         <nav className=" flex items-center gap-2">
           {session.status === "authenticated" ? (
             <div className=" flex items-center gap-2">
-              <Link href="/profile">Profile</Link>
+              <Link
+                href="/profile"
+                className=" shadow-md rounded-full px-6 py-2 border-[1px] border-[#ddd]"
+              >
+                {userName}
+              </Link>
               <button
                 onClick={() => signOut()}
                 className=" px-6 py-2 bg-primary text-white hover:shadow-md rounded-full"

@@ -6,6 +6,7 @@ import EyeOn from "../icons/EyeOn";
 import EyeOff from "../icons/EyeOff";
 import axios from "axios";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -52,10 +53,10 @@ const Register = () => {
   return (
     <div className=" flex flex-col justify-center items-center mx-auto">
       <h1 className=" text-primary font-bold text-4xl">Register</h1>
-      {showError && <p>Your login is not successful. Try again!</p>}
+      {showError && <p>Your registration is not successful. Try again!</p>}
       {showSuccess && (
         <p>
-          Your login is successful.{" "}
+          Your registration is successful.{" "}
           <span
             className=" text-primary font-bold underline"
             onClick={() => setShowLogin(true)}
@@ -113,7 +114,10 @@ const Register = () => {
 
         <p className="text-center">or login credentials provider</p>
         <button className="flex justify-center items-center gap-4 text-slate-500 border-[1px] border-black font-bold px-6 py-2 rounded-xl">
-          <div className=" relative h-6 w-6">
+          <div
+            className=" relative h-6 w-6"
+            onClick={() => signIn("google", { callbackUrl: "/" })}
+          >
             <Image
               src={
                 "https://banner2.cleanpng.com/20180521/ers/kisspng-google-logo-5b02bbe1d5c6e0.2384399715269058258756.jpg"
