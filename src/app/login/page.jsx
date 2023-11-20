@@ -72,13 +72,10 @@ const Login = () => {
       <div className=" flex flex-col gap-y-4 w-[350px] mt-4">
         <p className="text-center">or login credentials provider</p>
         <div
-          className="flex justify-center items-center gap-4 text-slate-500 border-[1px] border-black font-bold px-6 py-2 rounded-xl"
+          className="flex justify-center cursor-pointer items-center gap-4 text-slate-500 border-[1px] border-black font-bold px-6 py-2 rounded-xl"
           onClick={() => signIn("google", { callbackUrl: "/" })}
         >
-          <button
-            className=" relative h-6 w-6"
-            onClick={() => signIn("google")}
-          >
+          <button className=" relative h-6 w-6">
             <Image
               src={
                 "https://banner2.cleanpng.com/20180521/ers/kisspng-google-logo-5b02bbe1d5c6e0.2384399715269058258756.jpg"
