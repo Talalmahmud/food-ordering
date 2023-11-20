@@ -5,7 +5,7 @@ import React from "react";
 
 const Header = () => {
   const session = useSession();
-  console.log(session);
+  // console.log(session);
   const userName = session?.data?.user?.name?.split(" ")[0];
 
   return (
@@ -27,7 +27,7 @@ const Header = () => {
                 href="/profile"
                 className=" shadow-md rounded-full px-6 py-2 border-[1px] border-[#ddd]"
               >
-                {userName}
+                Hello, {userName}
               </Link>
               <button
                 onClick={() => signOut()}

@@ -7,6 +7,7 @@ import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcrypt";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "@/app/lib/mongoConnect";
+import { dbConnect } from "@/app/lib/dbConnect";
 
 export const authOption = {
   secret: process.env.SECRET,
@@ -48,7 +49,7 @@ export const authOption = {
         console.log(credentials);
         const { email, password } = credentials;
         // console.log(process.env.MONGO_URL);
-        mongoose.connect(process.env.MONGO_URL);
+        dbConnect();
 
         const user = await User.findOne({ email });
         console.log(user);

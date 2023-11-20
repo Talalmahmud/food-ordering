@@ -4,11 +4,9 @@ import { getServerSession } from "next-auth";
 import { authOption } from "../auth/[...nextauth]/route";
 import { dbConnect } from "@/app/lib/dbConnect";
 
-export async function PUT(req) {
-  const { name, url, street, address, postalCode, country, city } =
-    await req.json();
-
-  // console.log(body);
+export async function POST(req) {
+  const body = await req.json();
+  console.log(body);
   dbConnect();
   const session = await getServerSession(authOption);
   const email = session.user.email;
@@ -16,19 +14,7 @@ export async function PUT(req) {
   // user.name = body.name;
   // await user.save();
   try {
-    await User.updateOne(
-      { email },
-      {
-        name: name,
-        image: url,
-        street: street,
-        address: address,
-        postalCode: postalCode,
-        country: country,
-        city: city,
-      },
-      { upsert: true }
-    );
+    await User.updateOne({ email }, { name: body.name }, { upsert: true });
     console.log("update user");
   } catch (error) {
     console.log(error);
