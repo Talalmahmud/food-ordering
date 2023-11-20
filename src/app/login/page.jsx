@@ -18,39 +18,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await signIn("credentials", { email, password, callbackUrl: "/" });
-
-    // const fetchData = await axios.post(
-    //   "/api/login",
-    //   {
-    //     email: email,
-    //     password: password,
-    //   },
-    //   {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
-    // if (fetchData) {
-    //   console.log("Add successful");
-    //   setShowLogin(true);
-    //   setEmail("");
-    //   setPassword("");
-    //   setShowSuccess(true);
-    // } else {
-    //   console.log("Not add successful");
-    //   setShowError(true);
-    // }
-
-    // await fetch("/api/register", {
-    //   method: "POST",
-    //   body: JSON.stringify({ email, password }),
-    //   headers: { "Content-Type": "application/json" },
-    // }).then(()=> setShowLogin(true))
-    // .catch((error)=> setSHowError(true));
-    // ;
+    await signIn("credentials", { email, password });
   };
   return (
     <div className=" flex flex-col justify-center items-center mx-auto">
@@ -93,7 +61,10 @@ const Login = () => {
           )}
         </label>
 
-        <button className=" bg-primary text-white font-bold px-6 py-2 rounded-xl">
+        <button
+          type="submit"
+          className=" bg-primary text-white font-bold px-6 py-2 rounded-xl"
+        >
           Login
         </button>
       </form>
