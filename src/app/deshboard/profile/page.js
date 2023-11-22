@@ -116,7 +116,7 @@ const Profile = () => {
             Profile update successfully.
           </div>
         )}
-        <UserTab admin={isAdmin} />
+
         <div className=" flex items-start gap-8 p-20">
           <div className=" flex flex-col justify-center items-center gap-2">
             <div className=" relative h-[120px] w-[130px] rounded-md">

@@ -19,11 +19,13 @@ const UserSchema = new Schema(
     image: {
       type: String,
     },
+    phone: { type: String },
     street: { type: String },
     address: { type: String },
     city: { type: String },
     postalCode: { type: String },
     country: { type: String },
+    admin: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

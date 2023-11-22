@@ -3,9 +3,10 @@ import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
 import { authOption } from "../auth/[...nextauth]/route";
 import { dbConnect } from "@/app/lib/dbConnect";
+import { useParams } from "next/navigation";
 
 export async function PUT(req) {
-  const { name, url, street, address, postalCode, country, city } =
+  const { name, url, street, address, postalCode, country, city, phone } =
     await req.json();
 
   // console.log(body);
@@ -26,6 +27,7 @@ export async function PUT(req) {
         postalCode: postalCode,
         country: country,
         city: city,
+        phone: phone,
       },
       { upsert: true }
     );
@@ -35,4 +37,25 @@ export async function PUT(req) {
   }
 
   return Response.json("updated");
+}
+
+// export async function GET(req) {
+//   const url = new URL(req.url);
+//   const id = url.searchParams.get("id");
+//   const user = await User.findOne({ id });
+//   if (user) {
+//     return Response.json(user);
+//   }
+//   return null;
+// }
+
+export async function GET(req) {
+  dbConnect();
+  const session = await getServerSession(authOption);
+  const email = session.user.email;
+  const user = await User.findOne({ email });
+  if (user) {
+    return Response.json(user);
+  }
+  return null;
 }
