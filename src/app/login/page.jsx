@@ -7,6 +7,7 @@ import EyeOff from "../icons/EyeOff";
 import axios from "axios";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,6 +20,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await signIn("credentials", { email, password });
+    toast.success("User login successful.");
   };
   return (
     <div className=" flex flex-col justify-center items-center mx-auto">

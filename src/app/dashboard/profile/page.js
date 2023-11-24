@@ -2,10 +2,8 @@
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
-import UserTab from "../ui/UserTab";
 
 const Profile = () => {
   const session = useSession();
@@ -110,7 +108,6 @@ const Profile = () => {
   return (
     <div className=" ">
       <div className=" flex flex-col justify-center items-center">
-        <h1 className=" text-primary font-bold text-4xl">Profile</h1>
         {success && (
           <div className=" border-[1px] border-green-400 rounded-md flex justify-center items-center text-[14px] p-2">
             Profile update successfully.

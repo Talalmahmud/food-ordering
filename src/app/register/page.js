@@ -7,7 +7,7 @@ import EyeOff from "../icons/EyeOff";
 import axios from "axios";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
   const route = useRouter();

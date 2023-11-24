@@ -1,9 +1,7 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
-import { SessionProvider } from "next-auth/react";
 import AppProvider from "@/context/AppProvider";
 
 const inter = Roboto({

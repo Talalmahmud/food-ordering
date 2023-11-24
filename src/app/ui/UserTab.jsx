@@ -11,43 +11,43 @@ const UserTab = ({ admin }) => {
       <div className=" flex items-center gap-4">
         <Link
           className={`flex items-center gap-2 px-4 py-2 rounded-full ${
-            path === "/profile"
+            path === "/dashboard/profile"
               ? "bg-primary text-white"
               : "text-black bg-slate-300 hover:shadow-md hover:text-slate-600"
           }`}
-          href="/profile"
+          href="/dashboard/profile"
         >
           Profile
         </Link>
         {admin && (
           <>
             <Link
-              className={`flex items-center gap-2 px-4 py-2 text-black bg-slate-300 hover:shadow-md hover:text-slate-600 rounded-full ${
-                path === "/categories"
+              className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+                path === "/dashboard/categories"
                   ? "bg-primary text-white"
                   : "text-black bg-slate-300 hover:shadow-md hover:text-slate-600"
               }`}
-              href="/categories"
+              href="/dashboard/categories"
             >
               Categories
             </Link>
             <Link
-              className={`flex items-center gap-2 px-4 py-2 text-black bg-slate-300 hover:shadow-md hover:text-slate-600 rounded-full ${
-                path === "/menu-items"
+              className={`flex items-center gap-2 px-4 py-2 hover:shadow-md rounded-full ${
+                path === "/dashboard/menu-items"
                   ? "bg-primary text-white"
                   : "text-black bg-slate-300 hover:shadow-md hover:text-slate-600"
               }`}
-              href="/menu-items"
+              href="/dashboard/menu-items"
             >
               Menu items
             </Link>
             <Link
-              className={`flex items-center gap-2 px-4 py-2 text-black bg-slate-300 hover:shadow-md hover:text-slate-600 rounded-full ${
-                path === "/users"
+              className={`flex items-center gap-2 px-4 py-2 hover:shadow-md rounded-full ${
+                path === "/dashboard/users"
                   ? "bg-primary text-white"
                   : "text-black bg-slate-300 hover:shadow-md hover:text-slate-600"
               }`}
-              href="/users"
+              href="/dashboard/users"
             >
               Users
             </Link>
