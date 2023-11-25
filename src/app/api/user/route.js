@@ -1,11 +1,11 @@
-import User from "@/models/User";
+// import User from "@/models/User";
 
-import { dbConnect } from "@/app/lib/dbConnect";
+// import { dbConnect } from "@/app/lib/dbConnect";
 
-export async function GET() {
-  dbConnect();
+// export async function GET() {
+//   dbConnect();
 
-  const users = await User.find({});
+//   const users = await User.find({});
 
-  return Response.json(users);
-}
+//   return Response.json(users);
+// }
