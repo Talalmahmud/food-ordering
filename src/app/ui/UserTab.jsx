@@ -5,7 +5,7 @@ import React from "react";
 
 const UserTab = ({ admin }) => {
   const path = usePathname();
-  console.log(path);
+  // console.log(path);
   return (
     <div>
       <div className=" flex items-center gap-4">

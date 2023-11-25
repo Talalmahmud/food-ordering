@@ -72,7 +72,7 @@ const Categories = () => {
     getCategories();
   }, []);
 
-  console.log(categoryList);
+  // console.log(categoryList);
 
   return (
     <div className="h-[100vh]">

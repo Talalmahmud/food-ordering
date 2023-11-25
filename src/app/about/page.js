@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const page = () => {
+const About = () => {
   return (
     <div className=" flex flex-col h-[100vh] justify-center items-center w-full">
       <h1 className=" uppercase text-2xl text-slate-400 ">Our Story</h1>
@@ -24,4 +24,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default About;

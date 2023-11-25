@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const Profile = () => {
   const session = useSession();
   const { status } = session;
-  console.log(session.data);
+  // console.log(session.data);
   const userImg = session?.data?.user?.image;
   const [name, setName] = useState(session?.data?.user?.name);
   const [imageUrl, setImageUrl] = useState("");

@@ -15,7 +15,7 @@ const Users = () => {
   useEffect(() => {
     getUser();
   }, []);
-  console.log(userList);
+  // console.log(userList);
   return (
     <div>
       {userList?.map((item, index) => (

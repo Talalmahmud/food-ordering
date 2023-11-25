@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 
 const DashboardLayout = ({ children }) => {
   const session = useSession();
-  console.log(session);
+  // console.log(session);
   // const isAdmin = session.data.user.admin;
   return (
     <div className=" flex flex-col justify-center items-center py-2">

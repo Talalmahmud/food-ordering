@@ -7,12 +7,8 @@ import MenuItems from "./ui/MenuItems";
 import HomeMenu from "./ui/HomeMenu";
 import "react-toastify/dist/ReactToastify.css";
 
-import * as dotenv from "dotenv";
-import { useContext, useEffect } from "react";
-import { UserContext } from "@/context/UserContext";
-dotenv.config();
-
 export default function Home() {
+  console.log("env:", process.env.NEXTAUTH_URL);
   return (
     <div className=" h-full w-full  ">
       <Hero />

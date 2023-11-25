@@ -79,7 +79,7 @@ const MenuItems = () => {
   //     .then((res) => console.log(res.data))
   //     .catch((error) => console.log(error));
   // };
-  console.log(allItemsList);
+  // console.log(allItemsList);
   return (
     <div>
       <div
