@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@auth/core@0.18.1":
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.18.1.tgz#ab3906779e4dd5ce11e1c15052d9f78f3b494a74"
-  integrity sha512-L4MehYt/A7e5djsEid3jTSkRZ8sysxbirhmCXqSCPimGoFUtMCwTZrpzTALTSRwXGw/mps5fYlHROo3UQk9B3w==
+"@auth/core@0.18.3":
+  version "0.18.3"
+  resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.18.3.tgz#e85c2e8f3dbcee47ff7759d94a762781acedb505"
+  integrity sha512-YXQWxi3pKxngt+2vo3dq8+wDANlUH8nhQgX6EVdd3Enfe3vweBtHqzaWrtWzQnVb8wdGxdhxaoOlYroEBE+/yw==
   dependencies:
     "@panva/hkdf" "^1.1.1"
     cookie "0.5.0"
@@ -24,12 +24,12 @@
     preact "10.11.3"
     preact-render-to-string "5.2.3"
 
-"@auth/mongodb-adapter@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@auth/mongodb-adapter/-/mongodb-adapter-2.0.4.tgz#c24382ebb9f1569d2c51aa2bf6c8515f6ff12407"
-  integrity sha512-bfxS+7zXzbCH52BPTXiTa8DJEDs3aMfQcBpXLB9z60DLvms3qjAJcTT/d4QTWcd+//zcgy2ojQtY70KvQQpqrA==
+"@auth/mongodb-adapter@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@auth/mongodb-adapter/-/mongodb-adapter-2.0.6.tgz#6e63afae54a460f07c30947fc2485b743b9be552"
+  integrity sha512-d0OVn8y3omMaax0WNgvHhDEH47r8q6TvHrRqlPiczIgiyrUW7X9n2SC9A+0Im4jwf4WCQU1qw4Jv0R/xnCVR0w==
   dependencies:
-    "@auth/core" "0.18.1"
+    "@auth/core" "0.18.3"
 
 "@babel/code-frame@^7.0.0":
   version "7.23.4"
