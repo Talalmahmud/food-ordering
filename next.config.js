@@ -17,15 +17,6 @@ const nextConfig = {
       { hostname: "res.cloudinary.com" },
     ],
   },
-  env: {
-    MONGO_URL:
-      "mongodb+srv://mahmudtalal2:Osthir.2024@cluster0.mhqlp9e.mongodb.net/?retryWrites=true&w=majority",
-    NEXTAUTH_URL: "http://localhost:3000/",
-    SECRET: "talalmahmud",
-    GOOGLE_CLIENT_ID:
-      "344803160981-9nn1rpf8ts0mq9ogvrmg67qe0bvfqjov.apps.googleusercontent.com",
-    GOOGLE_CLIENT_SECRET: "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",
-  },
 };
 
 module.exports = nextConfig;

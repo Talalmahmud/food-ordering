@@ -6,13 +6,10 @@ import { authOption } from "../auth/[...nextauth]/route";
 
 export async function GET() {
   const session = await getServerSession(authOption);
-  if (session.status === "authenticated") {
-    dbConnect();
 
-    const users = await User.find({});
+  dbConnect();
 
-    return Response.json(users);
-  } else {
-    return Response.json("User not authenticated");
-  }
+  const users = await User.find({});
+
+  return Response.json(users);
 }

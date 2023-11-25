@@ -8,7 +8,9 @@ import bcrypt from "bcrypt";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "@/app/lib/mongoConnect";
 import { dbConnect } from "@/app/lib/dbConnect";
-
+console.log(process.env.SECRET);
+console.log(process.env.GOOGLE_CLIENT_ID);
+console.log(process.env.GOOGLE_CLIENT_SECRET);
 export const authOption = {
   secret: process.env.SECRET,
   adapter: MongoDBAdapter(clientPromise),
