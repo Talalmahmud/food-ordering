@@ -1,30 +1,12 @@
-"use client";
+import User from "@/app/ui/User";
+import React from "react";
 
-import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-import axios from "axios";
-
-const Users = () => {
-  const [userList, setUserList] = useState([]);
-  const getUser = async () => {
-    await axios
-      .get("/api/user")
-      .then((res) => setUserList(res.data))
-      .catch((error) => toast.error(error));
-  };
-  useEffect(() => {
-    getUser();
-  }, []);
-  // console.log(userList);
+const page = () => {
   return (
     <div>
-      {userList?.map((item, index) => (
-        <div key={index}>
-          <p>{item.name}</p>
-        </div>
-      ))}
+      <User />
     </div>
   );
 };
 
-export default Users;
+export default page;
