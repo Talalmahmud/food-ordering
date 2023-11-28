@@ -1,7 +1,117 @@
 "use client";
 
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React, { useState } from "react";
+
+const reviews = [
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+  {
+    name: "Talal",
+    review: "This is so good",
+    ratting: 4,
+  },
+];
+const products = [
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+  {
+    name: "Product",
+    price: 4,
+  },
+];
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
@@ -112,19 +222,31 @@ const Product = () => {
         <h2 className="text-2xl font-bold mt-8 mb-4">Customer Reviews</h2>
         {/* Add your reviews component here */}
         {/* Example: <ProductReviews /> */}
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis libero
-        voluptatem beatae eveniet repellendus nemo mollitia! Quo illo sunt
-        beatae similique vero ut, doloremque perferendis odio unde tempora
-        nesciunt rem.
+        <div className=" w-full bg-slate-400 overflow-y-auto flex gap-2 items-center">
+          {reviews?.map((item, index) => (
+            <>
+              <div className=" flex flex-col min-w-[200px] items-center justify-center gap-2 bg-slate-300 p-2">
+                <h2 className=" text-2xl">{item.name}</h2>
+                <p> {item.ratting}</p>
+                <p>{item.review}</p>
+              </div>
+            </>
+          ))}
+        </div>
         {/* Related Products Section */}
         <h2 className="text-2xl font-bold mb-4">Related Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Add related product cards here */}
-          {/* Example: <RelatedProductCard /> */}
-          &Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-          corporis vitae dicta optio ratione eveniet tempora exercitationem
-          animi dignissimos voluptas porro accusamus, aspernatur cum, eligendi
-          possimus eaque eum ad vel.
+        <div className=" w-full bg-slate-400 overflow-y-auto flex gap-2 items-center">
+          {products?.map((item, index) => (
+            <>
+              <div
+                className=" flex flex-col min-w-[200px] items-center justify-center gap-2 bg-slate-300 p-2"
+                onClick={() => redirect("/product")}
+              >
+                <h2 className=" text-2xl">{item.name}</h2>
+                <p> {item.price}</p>
+              </div>
+            </>
+          ))}
         </div>
       </div>
     </div>

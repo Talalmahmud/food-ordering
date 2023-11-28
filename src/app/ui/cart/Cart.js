@@ -1,13 +1,23 @@
 "use client";
 
 import { UserContext } from "@/context/UserContext";
+import { useRouter } from "next/navigation";
 import React, { useContext, useEffect } from "react";
 
 const Cart = () => {
   const { cartList, setCartList } = useContext(UserContext);
+  const navigate = useRouter();
   useEffect(() => {
     setCartList(JSON.parse(localStorage.getItem("cartItems")) || []);
   }, [setCartList]);
+
+  const onDelete = (id) => {
+    const localData = JSON.parse(localStorage.getItem("cartItems"));
+    const filterData = localData?.filter((item) => (item !== item.id) === id);
+    const filterJson = JSON.stringify(filterData);
+    localStorage.setItem("cartItems", filterJson);
+    setCartList(JSON.parse(localStorage.getItem("cartItems")) || []);
+  };
 
   return (
     <div className="min-h-[100vh]">
@@ -29,15 +39,9 @@ const Cart = () => {
                 <td className="py-2 px-4 flex justify-center gap-2">
                   <button
                     className="text-blue-600 hover:underline"
-                    onClick={() => onView(item.id)}
+                    onClick={() => navigate.push("/product")}
                   >
                     View
-                  </button>
-                  <button
-                    className="text-green-600 hover:underline"
-                    onClick={() => onEdit(item.id)}
-                  >
-                    Edit
                   </button>
                   <button
                     className="text-red-600 hover:underline"
