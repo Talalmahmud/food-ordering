@@ -1,10 +1,13 @@
 "use client";
 
 import { UserContext } from "@/context/UserContext";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 const Cart = () => {
-  const { cartList } = useContext(UserContext);
+  const { cartList, setCartList } = useContext(UserContext);
+  useEffect(() => {
+    setCartList(JSON.parse(localStorage.getItem("cartItems")) || []);
+  }, [setCartList]);
 
   return (
     <div className="min-h-[100vh]">
@@ -19,8 +22,8 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody>
-            {cartList.map((item, index) => (
-              <tr key={item.id} className="border-b">
+            {cartList?.map((item, index) => (
+              <tr key={index} className="border-b">
                 <td className="py-2 px-4 text-center">{index + 1}</td>
                 <td className="py-2 px-4 text-center">{item.name}</td>
                 <td className="py-2 px-4 flex justify-center gap-2">

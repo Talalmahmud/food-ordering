@@ -1,6 +1,12 @@
-import React from "react";
+"use client";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
-const page = () => {
+const Dashboard = () => {
+  const navigate = useRouter();
+  useEffect(() => {
+    navigate.push("/dashboard/profile");
+  }, [navigate]);
   return (
     <div className=" flex justify-center items-center">
       Welcome to dashboard
@@ -8,4 +14,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Dashboard;

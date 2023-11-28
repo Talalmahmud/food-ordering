@@ -94,12 +94,12 @@ const AddItem = ({ setShowModal, selectItem, setSelectItem, itemList }) => {
   };
 
   return (
-    <div className=" bg-transparent bg-black flex justify-center items-center h-full w-full z-50 top-0 left-0 fixed">
+    <div className="  bg-black bg-opacity-70 flex justify-center items-center h-full w-full z-50 top-0 left-0 fixed">
       <OutsideClickHandler onOutsideClick={() => setShowModal(false)}>
-        <h2 className=" text-primary text-center rounded-md text-4xl font-bold bg-slate-300">
+        <h2 className=" text-primary text-center rounded-tr-md rounded-tl-md text-4xl font-bold bg-slate-300">
           Add items
         </h2>
-        <div className=" flex  gap-10 bg-slate-400 justify-center py-4  h-[600px] overflow-y-auto rounded-lg p-8 ">
+        <div className=" flex  gap-10 bg-slate-400 justify-center py-4  h-[600px] overflow-y-auto p-8 ">
           <div className=" w-1/2">
             <div className=" flex justify-between items-center gap-2">
               <div className=" relative overflow-auto border-dotted border-2 h-[150px] w-[150px] rounded-md">
@@ -263,7 +263,7 @@ const AddItem = ({ setShowModal, selectItem, setSelectItem, itemList }) => {
             </div>
           </div>
         </div>
-        <div className=" flex justify-center items-center gap-2 bg-slate-300  py-2 rounded-md">
+        <div className=" flex justify-center items-center gap-2 bg-slate-300  py-2 rounded-br-md rounded-bl-md ">
           <div
             onClick={() => addHandle()}
             className=" bg-primary text-white font-bold px-6 py-2 rounded-xl cursor-pointer"

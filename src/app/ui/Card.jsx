@@ -1,13 +1,19 @@
 "use client";
 import { UserContext } from "@/context/UserContext";
 import Image from "next/image";
-import React, { useContext } from "react";
+import Link from "next/link";
+import React, { useContext, useEffect } from "react";
 
 const Card = () => {
   const { setCartList, cartList } = useContext(UserContext);
 
   const selectForCart = (data) => {
-    setCartList((prev) => [...prev, data]);
+    // const array = localStorage.setItem("cartItems", jsonData);
+    const array = JSON.parse(localStorage.getItem("cartItems")) || [];
+    array?.push(data);
+    const jsonData = JSON.stringify(array);
+    localStorage.setItem("cartItems", jsonData);
+    setCartList(JSON.parse(localStorage.getItem("cartItems")));
   };
 
   // useEffect(() => {
@@ -16,15 +22,18 @@ const Card = () => {
   //   localStorage.setItem("cartItems", jsonData);
   // }, [cartList]);
   return (
-    <div className=" bg-gray-200 hover:bg-white shadow-xl flex  cursor-pointer flex-col gap-2 items-center justify-center rounded p-2 transition-all">
-      <div className=" relative overflow-auto h-[190px] w-full mb-2 ">
+    <div className=" bg-gray-200 hover:bg-white shadow-xl flex  flex-col gap-2 items-center justify-center rounded p-2 transition-all">
+      <Link
+        href={"/product"}
+        className=" relative overflow-auto h-[190px] w-full mb-2 cursor-pointer "
+      >
         <Image
           src="https://www.freeiconspng.com/thumbs/pizza-png/pizza-png-13.png"
           alt="pizza"
           layout="fill"
           objectFit="contain"
         />
-      </div>
+      </Link>
 
       <h1 className=" text-xl font-bold">pizza title</h1>
       <p className="text-sm text-center">
@@ -32,7 +41,7 @@ const Card = () => {
         process.
       </p>
       <button
-        className=" text-white hover:bg-red-400  font-bold bg-primary rounded-full my-2  px-6  py-2 "
+        className=" text-white hover:bg-red-400 cursor-pointer  font-bold bg-primary rounded-full my-2  px-6  py-2 "
         onClick={() => selectForCart({ name: "Test", id: "2453" })}
       >
         Add to cart $20

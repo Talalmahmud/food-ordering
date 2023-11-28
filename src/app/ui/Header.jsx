@@ -1,7 +1,7 @@
 "use client";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CartIcon from "../icons/CartIcon";
 import { UserContext } from "@/context/UserContext";
 import toast from "react-hot-toast";
@@ -9,7 +9,12 @@ import toast from "react-hot-toast";
 const Header = () => {
   const session = useSession();
   const userName = session?.data?.user?.name?.split(" ")[0];
-  const { cartList } = useContext(UserContext);
+  const { cartList, setCartList } = useContext(UserContext);
+  // const [cartList, setCartList] = useState();
+
+  useEffect(() => {
+    setCartList(JSON.parse(localStorage.getItem("cartItems")));
+  }, [setCartList]);
 
   return (
     <>
@@ -28,7 +33,7 @@ const Header = () => {
             <div className=" relative">
               <CartIcon />
               <p className=" absolute -top-3 -right-4 text-primary font-semibold">
-                ({cartList?.length})
+                ({cartList?.length || 0})
               </p>
             </div>
           </Link>
